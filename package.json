@@ -8,11 +8,12 @@
   "author": "Wei Zhu <yesmeck@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "remax build -t wechat -w",
+    "dev:wechat": "remax build -t wechat -w",
+    "dev:alipay": "remax build -t alipay -w",
     "dev:h5": "umi dev",
     "clean": "rimraf dist",
     "prebuild": "npm run clean",
-    "build": "NODE_ENV=production remax build -t wechat"
+    "build": "NODE_ENV=production umi build"
   },
   "dependencies": {
     "clsx": "^1.0.4",

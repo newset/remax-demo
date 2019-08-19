@@ -1,3 +1,5 @@
-module.exports = {
-    output: "dist/wechat"
+module.exports = (cli) => {
+    return {
+        output: `dist/${cli.target}`
+    }
 }
