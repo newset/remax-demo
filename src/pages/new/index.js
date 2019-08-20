@@ -1,39 +1,41 @@
-import * as React from 'react';
+import React, { Component } from 'react';
 import { View, Input, navigateBack } from 'remax/wechat';
 import AddButton from '@/components/AddButton';
+
 import './index.css';
 
-const app = getApp();
+export default class Todo extends Component {
 
-export default () => {
-  const [text, setText] = React.useState('');
+  state = {
+    text: ""
+  }
 
-  const handleAdd = () => {
-    app.todos = app.todos.concat([
+  handleAdd = () => {
+    let item = [
       {
         id: Date.now(),
         text,
         compeleted: false
       }
-    ]);
-
+    ];
     navigateBack();
   };
+  render() {
+    return (
+      <View className="page-add-todo">
+        <View className="add-todo">
+          <Input
+            className="add-todo-input"
+            placeholder="What needs to be done?"
+            onInput={e => setText(e.detail.value)}
+            value={this.state.text}
+          />
+        </View>
 
-  return (
-    <View className="page-add-todo">
-      <View className="add-todo">
-        <Input
-          className="add-todo-input"
-          placeholder="What needs to be done?"
-          onInput={e => setText(e.detail.value)}
-          value={text}
-        />
+        <View className="todo-footer">
+          <AddButton text="Add Todo" onClick={this.handleAdd} />
+        </View>
       </View>
-
-      <View className="todo-footer">
-        <AddButton text="Add Todo" onClick={handleAdd} />
-      </View>
-    </View>
-  );
+    );
+  }
 };

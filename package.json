@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "clsx": "^1.0.4",
-    "dva": "^2.4.1",
+    "dva-core": "^1.4.0",
     "react": "^16.8.6",
     "remax": "1.0.1-dev.1",
     "remax-cli": "1.0.1-dev.1",

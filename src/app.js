@@ -1,5 +1,5 @@
+import createApp from "./dva";
 import './app.css';
-import "./dva";
 
 class App {
   todos = [
