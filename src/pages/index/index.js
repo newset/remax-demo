@@ -18,7 +18,8 @@ import './index.css';
 
 const app = getApp();
 
-export default () => {
+export default (props) => {
+
   const [user, login] = useUserInfo();
   const [todos, setTodos] = React.useState([]);
 

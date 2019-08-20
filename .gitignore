@@ -1,2 +1,5 @@
 node_modules
 .umi
+dist
+.env
+.env.*
