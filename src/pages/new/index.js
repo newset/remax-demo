@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Input, navigateBack } from 'remax/wechat';
+import { View, Input, navigateBack } from 'remax';
 import AddButton from '@/components/AddButton';
 
 import './index.css';

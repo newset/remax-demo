@@ -8,21 +8,31 @@
   "author": "Wei Zhu <yesmeck@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev:wechat": "remax build -t wechat -w",
+    "dev:weapp": "remax build -t wechat -w",
     "dev:alipay": "remax build -t alipay -w",
     "dev:h5": "umi dev",
     "clean": "rimraf dist",
     "prebuild": "npm run clean",
-    "build": "NODE_ENV=production umi build"
+    "build": "NODE_ENV=production umi build",
+    "commitmsg": "commitlint -e $GIT_PARAMS"
   },
   "dependencies": {
+    "@commitlint/cli": "^8.1.0",
+    "@commitlint/config-conventional": "^8.1.0",
     "clsx": "^1.0.4",
     "dva-core": "^1.4.0",
+    "husky": "^3.0.4",
     "react": "^16.8.6",
-    "remax": "1.0.1-dev.1",
-    "remax-cli": "1.0.1-dev.1",
+    "react-redux": "^7.1.0",
+    "remax": "^1.0.1",
+    "remax-cli": "^1.0.1",
     "rimraf": "^2.6.3",
     "umi": "^2.8.18",
     "umi-plugin-remax": "^1.0.1-beta.4"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
   }
 }

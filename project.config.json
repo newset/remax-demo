@@ -1,7 +1,23 @@
 {
-	"setting": {},
+	"setting": {
+		"urlCheck": true,
+		"es6": false,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"coverView": true,
+		"autoAudits": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
+	},
 	"appid": "wx5238208c96541eca",
-	"miniprogramRoot": "dist/",
+	"miniprogramRoot": "dist/wechat/",
 	"projectname": "Remax",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},

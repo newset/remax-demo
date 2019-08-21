@@ -5,6 +5,10 @@
     "declaration": true,
     "jsx": "react",
     "outDir": "lib",
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
   }
 }
