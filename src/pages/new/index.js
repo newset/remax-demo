@@ -1,9 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import { View, Input, navigateBack } from 'remax/wechat';
 import AddButton from '@/components/AddButton';
 
 import './index.css';
 
+const app = getApp();
 export default class Todo extends Component {
 
   state = {
@@ -11,15 +12,21 @@ export default class Todo extends Component {
   }
 
   handleAdd = () => {
-    let item = [
+    app.todos = app.todos.concat([
       {
         id: Date.now(),
-        text,
+        text: this.state.text,
         compeleted: false
       }
-    ];
+    ]);
     navigateBack();
   };
+
+  handleInput = e=>{
+    this.setState({
+      text: e.detail.value
+    })
+  }
   render() {
     return (
       <View className="page-add-todo">
@@ -27,7 +34,7 @@ export default class Todo extends Component {
           <Input
             className="add-todo-input"
             placeholder="What needs to be done?"
-            onInput={e => setText(e.detail.value)}
+            onInput={this.handleInput}
             value={this.state.text}
           />
         </View>
