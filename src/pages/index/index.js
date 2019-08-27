@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useShow } from 'remax';
+import { useShow } from 'remax/wechat';
 import {
   View,
   Image,
@@ -8,7 +8,7 @@ import {
   Label,
   Text,
   navigateTo
-} from 'remax';
+} from 'remax/wechat';
 import clsx from 'clsx';
 import useUserInfo from '../../hooks/useUserInfo';
 import AddButton from '@/components/AddButton';

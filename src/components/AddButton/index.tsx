@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Button, Text } from 'remax';
+import { Button, Text } from 'remax/wechat';
 import './index.css';
 
 const AddButton = ({ onClick, text }) => {
