@@ -1,11 +1,11 @@
 import dva from 'dva-core';
+// import createLoading from 'dva-loading';
+import models from './models';
 
-let app = dva.create({
-    models: []
+let dvaApp = dva.create({
+  models,
 });
 
-app.start();
+dvaApp.start();
 
-export default () =>{ 
-
-}
+export default dvaApp;

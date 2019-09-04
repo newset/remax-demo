@@ -13,6 +13,7 @@
     "dev:h5": "umi dev",
     "clean": "rimraf dist",
     "prebuild": "npm run clean",
+    "debug": "npx --node-arg=--inspect-brk remax build -t wechat",
     "build": "NODE_ENV=production umi build",
     "commitmsg": "commitlint -e $GIT_PARAMS"
   },
@@ -24,11 +25,10 @@
     "husky": "^3.0.4",
     "react": "^16.8.6",
     "react-redux": "^7.1.0",
-    "remax": "^1.0.1",
-    "remax-cli": "^1.0.1",
+    "remax": "^v1.1.0-alpha.1",
+    "remax-cli": "^v1.1.0-alpha.1",
     "rimraf": "^2.6.3",
-    "umi": "^2.8.18",
-    "umi-plugin-remax": "^1.0.1-beta.4"
+    "umi-plugin-remax": "^v1.1.0-alpha.1"
   },
   "commitlint": {
     "extends": [
