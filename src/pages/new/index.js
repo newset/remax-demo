@@ -1,7 +1,7 @@
 import React, { Component, useState } from 'react';
 import { View, Input, navigateBack } from 'remax/wechat';
 import AddButton from '@/components/AddButton';
-import { connect } from 'react-redux';
+// import { connect } from 'react-redux';
 import './index.css';
 
 const app = getApp();
@@ -51,4 +51,5 @@ class Todo extends Component {
   }
 }
 
-export default connect(() => {})(Todo);
+// export default connect(() => {})(Todo);
+export default Todo;

@@ -15,7 +15,8 @@ class App extends Component {
   ];
 
   render() {
-    return <Provider store={dva._store}>{this.props.children}</Provider>;
+    return this.props.children;
+    // return <Provider store={dva._store}>{this.props.children}</Provider>;
   }
 }
 
