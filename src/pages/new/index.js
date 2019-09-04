@@ -1,14 +1,18 @@
 import React, { Component, useState } from 'react';
 import { View, Input, navigateBack } from 'remax/wechat';
 import AddButton from '@/components/AddButton';
-
+import { connect } from 'react-redux';
 import './index.css';
 
 const app = getApp();
-export default class Todo extends Component {
 
+class Todo extends Component {
   state = {
-    text: ""
+    text: '',
+  };
+
+  componentDidMount() {
+    console.log('props:', this.props);
   }
 
   handleAdd = () => {
@@ -16,17 +20,17 @@ export default class Todo extends Component {
       {
         id: Date.now(),
         text: this.state.text,
-        compeleted: false
-      }
+        compeleted: false,
+      },
     ]);
     navigateBack();
   };
 
-  handleInput = e=>{
+  handleInput = e => {
     this.setState({
-      text: e.detail.value
-    })
-  }
+      text: e.detail.value,
+    });
+  };
   render() {
     return (
       <View className="page-add-todo">
@@ -45,4 +49,6 @@ export default class Todo extends Component {
       </View>
     );
   }
-};
+}
+
+export default connect(() => {})(Todo);

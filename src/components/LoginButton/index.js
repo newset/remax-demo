@@ -8,8 +8,7 @@ const LoginButton = ({ login, children }) => {
       className="login-button"
       hoverClass="none"
       openType="getUserInfo"
-      onGetUserInfo={login}
-    >
+      onGetUserInfo={login}>
       {children}
     </Button>
   );

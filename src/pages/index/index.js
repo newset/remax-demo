@@ -7,7 +7,7 @@ import {
   Checkbox,
   Label,
   Text,
-  navigateTo
+  navigateTo,
 } from 'remax/wechat';
 import clsx from 'clsx';
 import useUserInfo from '../../hooks/useUserInfo';
@@ -18,8 +18,7 @@ import './index.css';
 
 const app = getApp();
 
-export default (props) => {
-
+export default props => {
   const [user, login] = useUserInfo();
   const [todos, setTodos] = React.useState([]);
 
@@ -39,7 +38,7 @@ export default (props) => {
     const checkedTodos = e.detail.value;
     app.todos = app.todos.map(todo => ({
       ...todo,
-      completed: !!checkedTodos.find(id => todo.id == id)
+      completed: !!checkedTodos.find(id => todo.id == id),
     }));
 
     setTodos(app.todos);
@@ -67,9 +66,8 @@ export default (props) => {
             <Label
               key={todo.id}
               className={clsx('todo-item', {
-                checked: todo.completed
-              })}
-            >
+                checked: todo.completed,
+              })}>
               <Checkbox
                 className="todo-item-checkbox"
                 value={todo.id}
