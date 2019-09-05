@@ -1,55 +1,33 @@
-import React, { Component, useState } from 'react';
-import { View, Input, navigateBack } from 'remax/wechat';
+import * as React from 'react';
+import { connect } from 'remax-redux';
+import { View, Input, navigateBack } from 'remax/base';
 import AddButton from '@/components/AddButton';
-// import { connect } from 'react-redux';
 import './index.css';
 
-const app = getApp();
+const NewPage = ({ dispatch }) => {
+  const [text, setText] = React.useState('');
 
-class Todo extends Component {
-  state = {
-    text: '',
-  };
-
-  componentDidMount() {
-    console.log('props:', this.props);
-  }
-
-  handleAdd = () => {
-    app.todos = app.todos.concat([
-      {
-        id: Date.now(),
-        text: this.state.text,
-        compeleted: false,
-      },
-    ]);
+  const handleAdd = () => {
+    // dispatch(addTodo(text));
     navigateBack();
   };
 
-  handleInput = e => {
-    this.setState({
-      text: e.detail.value,
-    });
-  };
-  render() {
-    return (
-      <View className="page-add-todo">
-        <View className="add-todo">
-          <Input
-            className="add-todo-input"
-            placeholder="What needs to be done?"
-            onInput={this.handleInput}
-            value={this.state.text}
-          />
-        </View>
-
-        <View className="todo-footer">
-          <AddButton text="Add Todo" onClick={this.handleAdd} />
-        </View>
+  return (
+    <View className="page-add-todo">
+      <View className="add-todo">
+        <Input
+          className="add-todo-input"
+          placeholder="What needs to be done?"
+          onInput={e => setText(e.detail.value)}
+          value={text}
+        />
       </View>
-    );
-  }
-}
 
-// export default connect(() => {})(Todo);
-export default Todo;
+      <View className="todo-footer">
+        <AddButton text="Add Todo" onClick={handleAdd} />
+      </View>
+    </View>
+  );
+};
+
+export default connect()(NewPage);

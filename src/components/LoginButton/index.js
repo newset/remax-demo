@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Button } from 'remax/wechat';
+import { Button } from 'remax/base';
 import './index.css';
 
 const LoginButton = ({ login, children }) => {

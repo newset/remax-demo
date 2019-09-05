@@ -6,7 +6,9 @@ const target = process.env.PLATFORM || 'wechat';
 module.exports = {
   output: `dist/${target}`,
   alias: {
-    // 'react-redux': './node_modules/react-redux/es/alternate-renderers.js',
-    'react-redux': '../node_modules/react-redux/es/alternate-renderers.js',
+    'remax/base': `./node_modules/remax/${target}.js`,
+    'dva-core': './node_modules/dva-core/dist/index.js',
+    // 'react-redux': './node_modules/remax-redux/lib/index.js', // 1.0.x 基于 src resolve，暂时只能使用 `..` 来引用
+    // '@componets': 'src/components'
   },
 };
