@@ -8,27 +8,29 @@
   "author": "Wei Zhu <yesmeck@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev:weapp": "remax build -t wechat -w",
-    "dev:alipay": "remax build -t alipay -w",
+    "dev:weapp": "rimraf dist/wechat && PLATFORM=wechat remax build -t wechat -w",
+    "dev:alipay": "rimraf dist/alipay && PLATFORM=alipay remax build -t alipay -w",
     "dev:h5": "umi dev",
-    "clean": "rimraf dist",
     "prebuild": "npm run clean",
     "debug": "npx --node-arg=--inspect-brk remax build -t wechat",
-    "build": "NODE_ENV=production umi build",
+    "build:h5": "NODE_ENV=production umi build",
+    "build:weapp": "rimraf dist/wechat && NODE_ENV=production remax build -t wechat",
     "commitmsg": "commitlint -e $GIT_PARAMS"
   },
   "dependencies": {
     "@commitlint/cli": "^8.1.0",
     "@commitlint/config-conventional": "^8.1.0",
     "clsx": "^1.0.4",
-    "dva-core": "^1.4.0",
+    "dva-core": "^2.0.0",
     "husky": "^3.0.4",
     "react": "^16.8.6",
     "react-redux": "^7.1.0",
-    "remax": "^v1.1.0-alpha.1",
-    "remax-cli": "^v1.1.0-alpha.1",
+    "redux": "^4.0.4",
+    "remax": "^v1.1.0-alpha.2",
+    "remax-cli": "^v1.1.0-alpha.2",
+    "remax-redux": "^7.1.1-beta.1",
     "rimraf": "^2.6.3",
-    "umi-plugin-remax": "^v1.1.0-alpha.1"
+    "umi-plugin-remax": "^v1.1.0-alpha.2"
   },
   "commitlint": {
     "extends": [

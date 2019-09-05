@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useShow } from 'remax/wechat';
+import { connect } from 'remax-redux';
 import {
   View,
   Image,
@@ -8,40 +8,23 @@ import {
   Label,
   Text,
   navigateTo,
-} from 'remax/wechat';
+} from 'remax/base';
 import clsx from 'clsx';
-import useUserInfo from '../../hooks/useUserInfo';
+import useUserInfo from '@/hooks/useUserInfo';
 import AddButton from '@/components/AddButton';
 import LoginButton from '@/components/LoginButton';
 import logo from '@/assets/logo.png';
 import './index.css';
 
-const app = getApp();
-
-export default props => {
+const IndexPage = ({ todos, dispatch }) => {
   const [user, login] = useUserInfo();
-  const [todos, setTodos] = React.useState([]);
-
-  React.useEffect(() => {
-    setTodos(app.todos);
-  }, [app.todos]);
-
-  useShow(() => {
-    setTodos(app.todos);
-  }, []);
 
   const handleAdd = () => {
     navigateTo({ url: '../new/index' });
   };
 
-  const handleComplete = e => {
-    const checkedTodos = e.detail.value;
-    app.todos = app.todos.map(todo => ({
-      ...todo,
-      completed: !!checkedTodos.find(id => todo.id == id),
-    }));
-
-    setTodos(app.todos);
+  const handleToggle = todo => e => {
+    // dispatch(toggleTodo(todo.id));
   };
 
   return (
@@ -61,7 +44,7 @@ export default props => {
       </View>
 
       <View className="todo-items">
-        <CheckboxGroup className="todo-items-group" onChange={handleComplete}>
+        <CheckboxGroup className="todo-items-group">
           {todos.map(todo => (
             <Label
               key={todo.id}
@@ -72,6 +55,7 @@ export default props => {
                 className="todo-item-checkbox"
                 value={todo.id}
                 checked={todo.completed}
+                onChange={handleToggle(todo)}
               />
               <Text className="todo-item-text">{todo.text}</Text>
             </Label>
@@ -85,3 +69,9 @@ export default props => {
     </View>
   );
 };
+
+const mapStateToProps = state => ({
+  todos: state.todos,
+});
+
+export default connect(mapStateToProps)(IndexPage);

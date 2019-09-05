@@ -5,6 +5,6 @@ module.exports = {
   pages,
   window: {
     navigationBarTitleText: 'Wechat Todo App',
-    navigationBarBackgroundColor: backgroundColor
-  }
+    navigationBarBackgroundColor: backgroundColor,
+  },
 };
