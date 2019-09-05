@@ -3,7 +3,7 @@
 */
 import React, { Component } from 'react';
 import dva from './dva';
-import { Provider } from 'remax-redux'; // 引入后立即无法执行编译
+import { Provider } from 'react-redux'; // 引入后立即无法执行编译
 import './app.css';
 
 class App extends Component {
