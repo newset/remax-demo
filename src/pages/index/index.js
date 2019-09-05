@@ -20,7 +20,7 @@ const IndexPage = ({ todos, dispatch }) => {
   const [user, login] = useUserInfo();
 
   const handleAdd = () => {
-    navigateTo({ url: 'pages/new/index' });
+    navigateTo({ url: '/pages/new/index' });
   };
 
   const handleToggle = todo => e => {
@@ -70,8 +70,8 @@ const IndexPage = ({ todos, dispatch }) => {
   );
 };
 
-const mapStateToProps = state => ({
-  todos: state.todos || [],
+const mapStateToProps = ({ global }) => ({
+  todos: global.todos || [],
 });
 
 export default connect(mapStateToProps)(IndexPage);

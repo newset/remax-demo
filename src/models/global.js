@@ -11,7 +11,7 @@ export default {
     ],
   },
   reducers: {
-    save(state, { payload }) {},
+    toggle(state, { payload }) {},
   },
   effects: {
     *effect({ payload }, { put, call }) {},
