@@ -3,11 +3,7 @@ import { create } from 'dva-core';
 import models from './models';
 
 let dvaApp = create({
-  initialState: {
-    global: {
-      todos: [],
-    },
-  },
+  initialState: {},
 });
 
 models.forEach(dvaApp.model);

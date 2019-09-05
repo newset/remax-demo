@@ -8,7 +8,6 @@ module.exports = {
   alias: {
     'remax/base': `./node_modules/remax/${target}.js`,
     'react-redux': './node_modules/remax-redux/lib/index.js', // 使用 remax-redux
-    // 'dva-core': './node_modules/dva-core/dist/index.js',
     '@components': 'src/components',
   },
 };
