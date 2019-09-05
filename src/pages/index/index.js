@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { connect } from 'remax-redux';
+import { connect } from 'react-redux';
 import {
   View,
   Image,
@@ -20,7 +20,7 @@ const IndexPage = ({ todos, dispatch }) => {
   const [user, login] = useUserInfo();
 
   const handleAdd = () => {
-    navigateTo({ url: '../new/index' });
+    navigateTo({ url: 'pages/new/index' });
   };
 
   const handleToggle = todo => e => {
@@ -71,7 +71,7 @@ const IndexPage = ({ todos, dispatch }) => {
 };
 
 const mapStateToProps = state => ({
-  todos: state.todos,
+  todos: state.todos || [],
 });
 
 export default connect(mapStateToProps)(IndexPage);

@@ -7,8 +7,8 @@ module.exports = {
   output: `dist/${target}`,
   alias: {
     'remax/base': `./node_modules/remax/${target}.js`,
-    'dva-core': './node_modules/dva-core/dist/index.js',
-    // 'react-redux': './node_modules/remax-redux/lib/index.js', // 1.0.x 基于 src resolve，暂时只能使用 `..` 来引用
-    // '@componets': 'src/components'
+    'react-redux': './node_modules/remax-redux/lib/index.js', // 使用 remax-redux
+    // 'dva-core': './node_modules/dva-core/dist/index.js',
+    '@components': 'src/components',
   },
 };
