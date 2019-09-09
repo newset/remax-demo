@@ -15,7 +15,8 @@
 			"ignore": [],
 			"disablePlugins": [],
 			"outputPath": ""
-		}
+		},
+		"nodeModules": true
 	},
 	"appid": "wx5238208c96541eca",
 	"miniprogramRoot": "dist/wechat/",
