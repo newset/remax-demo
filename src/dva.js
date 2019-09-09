@@ -1,12 +1,11 @@
-import { create } from 'dva-core';
+import dva from '@remax/dva';
 // import createLoading from 'dva-loading';
 import models from './models';
 
-let dvaApp = create({
+let dvaApp = dva({
   initialState: {},
 });
 
 models.forEach(dvaApp.model);
-dvaApp.start();
 
 export default dvaApp;
