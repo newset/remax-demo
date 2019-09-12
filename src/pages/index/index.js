@@ -25,6 +25,10 @@ const IndexPage = ({ todos, dispatch }) => {
 
   const handleToggle = todo => e => {
     // dispatch(toggleTodo(todo.id));
+    dispatch({
+      type: 'todo/toggle',
+      id: todo.id,
+    });
   };
 
   return (
@@ -74,4 +78,16 @@ const mapStateToProps = ({ global }) => ({
   todos: global.todos || [],
 });
 
-export default connect(mapStateToProps)(IndexPage);
+class Wrapper extends React.Component {
+  onShareAppMessage() {
+    return {
+      path: '/pages/new/index',
+      title: 'new',
+    };
+  }
+  render() {
+    return <IndexPage {...this.props} />;
+  }
+}
+
+export default connect(mapStateToProps)(Wrapper);
