@@ -6,8 +6,9 @@ const target = process.env.PLATFORM || 'wechat';
 module.exports = {
   output: `dist/${target}`,
   alias: {
+    'react-reconciler':
+      './node_modules/react-reconciler/cjs/react-reconciler.production.min.js',
     'remax/base': `./node_modules/remax/${target}.js`,
-    'react-redux': './node_modules/remax-redux/lib/index.js', // 使用 remax-redux
     '@components': 'src/components',
   },
 };
