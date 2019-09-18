@@ -22,8 +22,8 @@
     "clsx": "^1.0.4",
     "react": "^16.8.6",
     "remax": "next",
-    "remax-cli": "next",
-    "rimraf": "^2.6.3"
+    "rimraf": "^2.6.3",
+    "rollup": "^1.21.3"
   },
   "devDependencies": {
     "husky": "^3.0.4",
