@@ -16,6 +16,8 @@ import LoginButton from '@/components/LoginButton';
 import logo from '@/assets/logo.png';
 import './index.css';
 
+// const logo = require('@/assets/logo.png');
+
 const IndexPage = ({ todos, dispatch }) => {
   const [user, login] = useUserInfo();
 
